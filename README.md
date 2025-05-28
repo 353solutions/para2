@@ -35,17 +35,26 @@ Miki Tebeka
 
 ### Code
 
-TBD
 
+
+- [value.go](value/value.go) - Custom serialization
+- [vm.go](vm/vm.go) - Missing vs empty
+- [logs.go](logs/logs.go) - Steaming JSON
+- [client.go](events/client.go) - HTTP Clients
 
 ### Links
 
+- [Installing Multiple Versions of Go](https://go.dev/doc/manage-install)
+    - You can set `GOROOT` to `~/sdk/go1.24.3`, see GoLand instructions [here](https://www.jetbrains.com/help/go/create-a-project-with-go-modules-integration.html)
+- [Year 2038 Problem](https://en.wikipedia.org/wiki/Year_2038_problem)
+- [Method Sets](https://www.youtube.com/watch?v=Z5cvLOrWlLM)
+- [mapstructure](https://pkg.go.dev/github.com/mitchellh/mapstructure#example-Decode) - `map[string]any` -> struct
+- [Server Side Events in Go](https://www.freecodecamp.org/news/how-to-implement-server-sent-events-in-go/)
+- [Chunked Transfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding)
 - [JSON Lines](https://jsonlines.org/)
 - [HTTP Status Cats](https://http.cat/)
-- [Unicode Folding](https://www.unicode.org/L2/L2000/00261-tr25-0d1.html)
 - [Fixing For Loops in Go 1.22](https://go.dev/blog/loopvar-preview)
 - [JSON - The Fine Print](https://www.ardanlabs.com/blog/2024/10/json-the-fine-print-part-1.html)
-- [HTTP cats](https://http.cat/)
 
 ### Data & Other
 
