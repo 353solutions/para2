@@ -1,7 +1,5 @@
 # Go Workshop
 
-https://gitlab.com/353workshops/paragon
-
 Miki Tebeka
 📬 [miki@353solutions.com.com](mailto:miki@353solutions.com), 𝕏 [@tebeka](https://twitter.com/tebeka), 👨 [mikitebeka](https://www.linkedin.com/in/mikitebeka/), ✒️[blog](https://www.ardanlabs.com/blog/)
 
