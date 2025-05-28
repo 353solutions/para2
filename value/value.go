@@ -90,6 +90,14 @@ func main() {
 	var buf bytes.Buffer
 	json.NewEncoder(&buf).Encode(&v)
 	fmt.Println(buf.String())
+
+	// Exercise: Implement json.Unmarshaler for Value
+	var v2 Value
+	if err := json.NewDecoder(&buf).Decode(&v2); err != nil {
+		fmt.Println("ERROR:", err)
+		return
+	}
+	fmt.Println(v2)
 }
 
 // What json.Marshal does
