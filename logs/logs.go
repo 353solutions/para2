@@ -1,6 +1,48 @@
 package main
 
-import "time"
+import (
+	"bytes"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io"
+	"time"
+)
+
+func main() {
+	var buf bytes.Buffer
+	enc := json.NewEncoder(&buf)
+	for _, l := range logs {
+		if err := enc.Encode(l); err != nil {
+			fmt.Println("ERROR:", err)
+			return
+		}
+	}
+
+	dec := json.NewDecoder(&buf)
+loop: // label
+	for {
+		var l Log
+		err := dec.Decode(&l)
+		/*
+			if errors.Is(err, io.EOF) {
+				break
+			}
+			if err != nil {
+				fmt.Println("ERROR:", err)
+				return
+			}
+		*/
+		switch {
+		case errors.Is(err, io.EOF):
+			break loop
+		case err != nil:
+			fmt.Println("ERROR:", err)
+			return
+		}
+		fmt.Println(l)
+	}
+}
 
 type Log struct {
 	Host    string    `json:"host"`
