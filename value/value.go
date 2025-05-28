@@ -92,12 +92,41 @@ func main() {
 	fmt.Println(buf.String())
 
 	// Exercise: Implement json.Unmarshaler for Value
+	// Hint: fmt.Sscanf
 	var v2 Value
 	if err := json.NewDecoder(&buf).Decode(&v2); err != nil {
 		fmt.Println("ERROR:", err)
 		return
 	}
 	fmt.Println(v2)
+
+	// Aside: Strings
+	// s := "c:\new\templates\2025.doc"
+	s := `c:\new\templates\2025.doc`
+
+	// `s` is a "raw string", \ is just a \
+	fmt.Println(s)
+
+	// You can use `` for multi-line strings
+	logs := `
+INFO OK
+ERROR BAD
+	`
+	fmt.Println(logs)
+}
+
+func (v *Value) UnmarshalJSON(data []byte) error {
+	// trim "" in `"136.700000cm"`
+	s := string(data[1 : len(data)-1])
+	var u string
+	var a float64
+	if _, err := fmt.Sscanf(s, "%f%s", &a, &u); err != nil {
+		return err
+	}
+
+	v.Amount = a
+	v.Unit = u
+	return nil
 }
 
 // What json.Marshal does
