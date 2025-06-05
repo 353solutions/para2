@@ -42,9 +42,12 @@ func Tokenize(text string) []string {
 	var tokens []string
 	for _, tok := range words {
 		tok = strings.ToLower(tok)
-		tok = Stem(tok)
+		if IsStop(tok) {
+			continue
+		}
 
-		if tok != "" && !IsStop(tok) {
+		tok = Stem(tok)
+		if tok != "" {
 			tokens = append(tokens, tok)
 		}
 	}

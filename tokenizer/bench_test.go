@@ -24,6 +24,7 @@ func BenchmarkTokenize(b *testing.B) {
 
 // Run benchmark
 // $ go test -run ^$ -bench . -count 7 | benchstat -
+// $ go test -run ^$ -bench . -count 7 | go tool benchstat -
 // Run profiler
 // $ go test -run ^$ -bench . -cpuprofile cpu.pprof
 // View profiling
