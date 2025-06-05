@@ -1,6 +1,7 @@
 package matrix
 
 import (
+	"math/rand/v2"
 	"testing"
 )
 
@@ -14,7 +15,8 @@ func newMatrix(b *testing.B) (*Matrix, float64) {
 	sum := 0.0
 	for r := range m.Rows {
 		for c := range m.Cols {
-			v := float64((r + 1) * (c + 1))
+			// v := float64((r + 1) * (c + 1))
+			v := rand.Float64()
 			i := m.index(r, c)
 			m.data[i] = v
 			sum += v

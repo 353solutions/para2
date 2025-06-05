@@ -30,12 +30,20 @@ func (m *Matrix) index(row, col int) int {
 // Sum returns the sum of all the values in m.
 func (m *Matrix) Sum() float64 {
 	total := 0.0
-	for col := range m.Cols {
-		for row := range m.Rows {
-			i := m.index(row, col)
-			total += m.data[i]
+	/*
+		for col := range m.Cols {
+			for row := range m.Rows {
+				i := m.index(row, col)
+				total += m.data[i]
+			}
 		}
+	*/
+	for _, v := range m.data {
+		total += v
 	}
 
 	return total
 }
+
+// orig: 4619228
+//        825814
