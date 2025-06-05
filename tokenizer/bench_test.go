@@ -33,3 +33,8 @@ func BenchmarkTokenize(b *testing.B) {
 //  go test -run ^$ -bench -memprofile mem.pprof -benchmem
 // View memory profile
 // $ go tool pprof -http :8081 tokenizer.test mem.pprof
+// Run the execution tracer
+// $ go test -run ^$ -bench . -trace trace.out
+// View trace
+// $ go tool trace trace.out
+// (works only in chrome)

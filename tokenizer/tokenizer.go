@@ -1,7 +1,6 @@
 package tokenizer
 
 import (
-	"regexp"
 	"strings"
 )
 
@@ -29,16 +28,43 @@ func Stem(word string) string {
 }
 
 // "Who's on first?" -> [who s on first]
-var wordRe = regexp.MustCompile(`[a-zA-Z]+`)
+// var wordRe = regexp.MustCompile(`[a-zA-Z]+`)
 
 func initialSplit(text string) []string {
-	return wordRe.FindAllString(text, -1)
+	// return wordRe.FindAllString(text, -1)
+	size := len(text) / 5 // average case has 20% tokens
+	fs := make([]string, 0, size)
+	i := 0
+	for i < len(text) {
+		// eat start
+		for i < len(text) && !isLetter(text[i]) {
+			i++
+		}
+		if i == len(text) {
+			break
+		}
+
+		j := i + 1
+		for j < len(text) && isLetter(text[j]) {
+			j++
+		}
+		fs = append(fs, text[i:j])
+
+		i = j
+	}
+	return fs
+}
+
+func isLetter(b byte) bool {
+	return (b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z')
 }
 
 func Tokenize(text string) []string {
 	words := initialSplit(text)
 
-	var tokens []string
+	// Research show 75% percentile of tokens get into words
+	size := int(float64(len(words)) * .75)
+	tokens := make([]string, 0, size)
 	for _, tok := range words {
 		tok = strings.ToLower(tok)
 		if IsStop(tok) {
