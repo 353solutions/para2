@@ -1,11 +1,23 @@
 package main
 
-import "fmt"
+/*
+Go
+type Reader interface {
+	Read([]byte) (int, error)
+}
+
+Python
+type Reader interface {
+	Read(int) ([]byte, error)
+}
+*/
 
 func main() {
 
-	a, b := 1.1, 2.2
-	fmt.Println(a + b)
+	/*
+		a, b := 1.1, 2.2
+		fmt.Println(a + b)
+	*/
 
 	/*
 		s := "שלום"

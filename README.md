@@ -78,6 +78,10 @@ TBD
 
 ### Links
 
+- [The Architecture of Open Source Applications](https://aosabook.org/en/) - Including a book on performance
+- [Plain Text](https://www.youtube.com/watch?v=4mRxIgu9R70) - Fun talk about Unicode
+- [Regular Expression Matching Can Be Simple And Fast](https://swtch.com/~rsc/regexp/regexp1.html)
+- [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/)
 - [Rules of Optimization Club](https://wiki.c2.com/?RulesOfOptimizationClub)
 - [Computer Latency at Human Scale](https://twitter.com/jordancurve/status/1108475342468120576)
 - [So you wanna go fast](https://www.slideshare.net/TylerTreat/so-you-wanna-go-fast-80300458)
