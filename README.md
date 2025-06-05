@@ -60,3 +60,31 @@ Miki Tebeka
 
 - [Syllabus](_extra/syllabus.pdf)
 
+
+---
+
+## Day 2: Going Faster
+
+### Agenda
+
+- Benchmarking & profiling
+    - tokenizer
+- Performance tips & tricks
+- Optimizing memory
+
+### Code
+
+TBD
+
+### Links
+
+- [Rules of Optimization Club](https://wiki.c2.com/?RulesOfOptimizationClub)
+- [Computer Latency at Human Scale](https://twitter.com/jordancurve/status/1108475342468120576)
+- [So you wanna go fast](https://www.slideshare.net/TylerTreat/so-you-wanna-go-fast-80300458)
+- [High Performance Go](https://dave.cheney.net/high-performance-go-workshop/gophercon-2019.html)
+- [Miki's Optimization Overview](_extra/optimize.md)
+- [A Benchmarking Checklist](https://www.brendangregg.com/blog/2018-06-30/benchmarking-checklist.html)
+- [A Guide to the Go Garbage Collector](https://tip.golang.org/doc/gc-guide)
+- [hey](https://github.com/rakyll/hey)
+- [Garbage Collection In Go : Part I - Semantics](https://www.ardanlabs.com/blog/2018/12/garbage-collection-in-go-part1-semantics.html)
+- [benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat)
