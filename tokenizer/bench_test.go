@@ -25,7 +25,11 @@ func BenchmarkTokenize(b *testing.B) {
 // Run benchmark
 // $ go test -run ^$ -bench . -count 7 | benchstat -
 // $ go test -run ^$ -bench . -count 7 | go tool benchstat -
-// Run profiler
+// Run profiler (CPU)
 // $ go test -run ^$ -bench . -cpuprofile cpu.pprof
 // View profiling
 // $ go tool pprof -http :8081 tokenizer.test cpu.pprof
+// Profile memory
+//  go test -run ^$ -bench -memprofile mem.pprof -benchmem
+// View memory profile
+// $ go tool pprof -http :8081 tokenizer.test mem.pprof
