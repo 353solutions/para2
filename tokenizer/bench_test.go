@@ -13,10 +13,18 @@ offices of the League, 7 Pope’s Court, Fleet Street.
 `
 
 func BenchmarkTokenize(b *testing.B) {
-	for b.Loop() {
+	// for i := 0; i < b.N; i++ {  // Go < 1.24
+	for b.Loop() { // 1.24+
 		tokens := Tokenize(text)
 		if len(tokens) != 47 {
 			b.Fatal(len(tokens))
 		}
 	}
 }
+
+// Run benchmark
+// $ go test -run ^$ -bench . -count 7 | benchstat -
+// Run profiler
+// $ go test -run ^$ -bench . -cpuprofile cpu.pprof
+// View profiling
+// $ go tool pprof -http :8081 tokenizer.test cpu.pprof

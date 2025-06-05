@@ -1,10 +1,13 @@
-package tokenizer
+package tokenizer_test
 
-import "fmt"
+import (
+	"fmt"
+	"para2/tokenizer"
+)
 
 func ExampleTokenize() {
 	text := "Who's on first?"
-	for _, tok := range Tokenize(text) {
+	for _, tok := range tokenizer.Tokenize(text) {
 		fmt.Println(tok)
 	}
 

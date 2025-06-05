@@ -8,6 +8,13 @@ import (
 // Zero vs Missing Value
 
 func main() {
+	/*
+		//csvFile := "c:\to\new\reports\2025.csv"
+		// `a` is a "raw string", \ is just a \
+		csvFile := `c:\to\new\reports\2025.csv`
+		fmt.Println(csvFile)
+		return
+	*/
 	// data := []byte(`{"image": "ubuntu", "count": 3}`)
 	data := []byte(`{"image": "ubuntu"}`)
 	// Business requirement: If user didn't send count, use 1.

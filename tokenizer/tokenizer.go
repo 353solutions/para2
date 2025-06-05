@@ -6,11 +6,17 @@ import (
 	"strings"
 )
 
-var (
-	// "Who's on first?" -> [who s on first]
-	suffixes = []string{"ed", "ing", "s"}
-	wordRe   = regexp.MustCompile(`[a-zA-Z]+`)
-)
+/*
+func init() {
+	var err error
+	wordRe, err = regexp.Compile(`[a-zA-Z]+`)
+	if err != nil {
+		panic(err)
+	}
+}
+*/
+
+var suffixes = []string{"ed", "ing", "s"}
 
 // working, works, worked -> work
 func Stem(word string) string {
@@ -23,20 +29,26 @@ func Stem(word string) string {
 	return word
 }
 
+// "Who's on first?" -> [who s on first]
+var wordRe = regexp.MustCompile(`[a-zA-Z]+`)
+
 func initialSplit(text string) []string {
 	return wordRe.FindAllString(text, -1)
 }
 
 func Tokenize(text string) []string {
 	words := initialSplit(text)
-	tokens := make([]string, 0, int(0.9*float64(len(words))))
+
+	var tokens []string
 	for _, tok := range words {
 		tok = strings.ToLower(tok)
 		tok = Stem(tok)
+
 		if tok != "" && !IsStop(tok) {
 			tokens = append(tokens, tok)
 		}
 	}
+
 	return tokens
 }
 
