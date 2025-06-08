@@ -74,7 +74,10 @@ Miki Tebeka
 
 ### Code
 
-TBD
+- [tokenizer](tokenizer/) - Benchmark, profile, CPU & memory
+- [store](store) - cache & serialization
+- [matrix](matrix/) - CPU cache friendly
+- [playground](playground/) - This & that ☺
 
 ### Links
 
@@ -104,10 +107,17 @@ TBD
 
 ### Code
 
-TBD
+
+- [taxi_check.go](taxi_check/taxi_check.go) - Convert sequential to concurrent, pool
+- [go_chan.go](go_chan/go_chan.go) - Channel semantics, goroutines
+- [pool.go](pool/pool.go) - Goroutine pool, return channel
+- [fan_in.go](fan_in/fan_in.go) - Fan in pattern
+- [panic.go](panic/panic.go) - Guarding against panics
 
 ### Links
 
+- [automaxprocs](https://pkg.go.dev/go.uber.org/automaxprocs@v1.6.0/maxprocs)
+- [x/time/rate](https://pkg.go.dev/golang.org/x/time/rate) - Rate limiter
 - [The race detector](https://go.dev/doc/articles/race_detector)
 - [errgroup](https://pkg.go.dev/golang.org/x/sync/errgroup)
 - [Data Race Patterns in Go](https://eng.uber.com/data-race-patterns-in-go/)

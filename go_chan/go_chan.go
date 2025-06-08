@@ -18,6 +18,10 @@ Concurrency:
 		- buffer size should be 1
 - receive from closed channel returns zero value without blocking
 	- use "v, ok :- <- ch" to see if ch is closed
+- closing a closed or nil channel will panic
+	- channel ownership
+- send to a closed channel will panic
+- send/receive to/from a nil channel block forever
 */
 
 import (
@@ -117,6 +121,52 @@ func main() {
 	duration = time.Since(start)
 	fmt.Printf("%d URLS in %v\n", len(urls), duration)
 
+	var ch3 chan int
+
+	go func() {
+		v := <-ch3
+		fmt.Println("v:", v)
+	}()
+
+	time.Sleep(100 * time.Millisecond)
+	ch3 = make(chan int, 1)
+	ch3 <- 3
+	time.Sleep(100 * time.Millisecond)
+
+	urlCh := make(chan string)
+	var urlWg sync.WaitGroup
+	urlWg.Add(len(urls))
+	for i := range 2 {
+		go poolWorker(i, urlCh, &urlWg)
+	}
+
+	for _, url := range urls {
+		urlCh <- url
+	}
+	close(urlCh) // signal no more work
+
+	urlWg.Wait()
+
+	ch4 := make(chan int, 3)
+	ch4 <- 1
+	ch4 <- 2
+	close(ch4)
+	// ch4 <- 3 // panic
+	v, ok := <-ch4
+	fmt.Println(v, ok)
+	v, ok = <-ch4
+	fmt.Println(v, ok)
+	v, ok = <-ch4
+	fmt.Println(v, ok)
+
+}
+
+func poolWorker(id int, ch <-chan string, wg *sync.WaitGroup) {
+	for url := range ch {
+		slog.Info("worker", "id", id, url, url)
+		checkURL(url)
+		wg.Done()
+	}
 }
 
 type result struct {
