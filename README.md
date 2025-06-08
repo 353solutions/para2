@@ -92,3 +92,39 @@ TBD
 - [hey](https://github.com/rakyll/hey)
 - [Garbage Collection In Go : Part I - Semantics](https://www.ardanlabs.com/blog/2018/12/garbage-collection-in-go-part1-semantics.html)
 - [benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat)
+
+# Day 3: Advanced Concurrency
+
+### Agenda
+
+- Channel semantics
+- Goroutine pools
+- The "sync" & "sync/atomic" packages
+- Handling panics in goroutines
+
+### Code
+
+TBD
+
+### Links
+
+- [The race detector](https://go.dev/doc/articles/race_detector)
+- [errgroup](https://pkg.go.dev/golang.org/x/sync/errgroup)
+- [Data Race Patterns in Go](https://eng.uber.com/data-race-patterns-in-go/)
+- [Go Concurrency Patterns: Pipelines and cancellation](https://go.dev/blog/pipelines)
+- [Go Concurrency Patterns: Context](https://go.dev/blog/context)
+- [Curious Channels](https://dave.cheney.net/2013/04/30/curious-channels)
+- [The Behavior of Channels](https://www.ardanlabs.com/blog/2017/10/the-behavior-of-channels.html)
+- [Channel Semantics](https://www.353solutions.com/channel-semantics)
+- [Why are there nil channels in Go?](https://medium.com/justforfunc/why-are-there-nil-channels-in-go-9877cc0b2308)
+- [Amdahl's Law](https://en.wikipedia.org/wiki/Amdahl%27s_law) - Limits of concurrency
+- [Computer Latency at Human Scale](https://twitter.com/jordancurve/status/1108475342468120576/photo/1)
+- [Concurrency is not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso) by Rob Pike
+- [Scheduling in Go](https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part2.html) by Bill Kennedy
+- [conc: better structured concurrency for go](https://github.com/sourcegraph/conc)
+
+
+### Data & More
+
+- [rtb.go](_extra/rtb.go)
+- [taxi.tar](https://storage.googleapis.com/353solutions/c/data/taxi.tar)
