@@ -11,6 +11,15 @@ Concurrency:
 	- channel
 */
 
+/* Channel semantics
+- send/receive blocks until opposite operation(*)
+	- guarantee of delivery
+	- buffered channel of capacity "n", has "n" non-blocking sends
+		- buffer size should be 1
+- receive from closed channel returns zero value without blocking
+	- use "v, ok :- <- ch" to see if ch is closed
+*/
+
 import (
 	"fmt"
 	"log/slog"
@@ -138,10 +147,3 @@ func checkURL(url string) {
 	slog.Info("checkURL", "url", url, "status", resp.Status)
 
 }
-
-/* Channel semantics
-- send/receive blocks until opposite operation(*)
-	- guarantee of delivery
-- receive from closed channel returns zero value without blocking
-	- use "v, ok :- <- ch" to see if ch is closed
-*/
