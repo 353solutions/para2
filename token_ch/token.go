@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"sync"
 	"time"
 )
 
@@ -21,13 +20,6 @@ func main() {
 	}
 
 	time.Sleep(4 * time.Second)
-	/*
-		If you want to give time for cleanup
-
-		ctx, _ := context.WithTimeout(context.Background(), 3*time.Second)
-		t.Close(ctx)
-		<-ctx.Done()
-	*/
 }
 
 func (t *Token) Close() error {
@@ -37,11 +29,17 @@ func (t *Token) Close() error {
 	return nil
 }
 
+type Cmd struct {
+	op    string
+	value string
+	ch    chan string
+}
+
 func NewToken() *Token {
 	// Design question: Do we want to pass ctx to NewToken?
 	ctx, cancel := context.WithCancel(context.Background())
 	t := Token{
-		value:  refreshToken(),
+		ch:     make(chan Cmd),
 		cancel: cancel,
 	}
 
@@ -51,13 +49,26 @@ func NewToken() *Token {
 			select {
 			case <-ticker.C:
 				tok := refreshToken()
-
-				t.mu.Lock()
-				t.value = tok
-				t.mu.Unlock()
+				t.ch <- Cmd{"write", tok, nil}
 			case <-ctx.Done():
 				ticker.Stop()
 				return
+			}
+		}
+	}()
+
+	tok := refreshToken()
+	go func() {
+		for {
+			select {
+			case <-ctx.Done():
+				return
+			case cmd := <-t.ch:
+				if cmd.op == "read" {
+					cmd.ch <- tok
+					continue
+				}
+				tok = cmd.value
 			}
 		}
 	}()
@@ -74,16 +85,19 @@ Have only single goroutine that reads,writes the data. Communicate with it via c
 */
 
 func (t *Token) Value() string {
-	t.mu.RLock()
-	defer t.mu.RUnlock()
+	cmd := Cmd{
+		op: "read",
+		// buffered so reader won't block
+		ch: make(chan string, 1),
+	}
 
-	return t.value
+	t.ch <- cmd
+	return <-cmd.ch
 }
 
 type Token struct {
+	ch     chan Cmd
 	cancel context.CancelFunc
-	mu     sync.RWMutex
-	value  string
 }
 
 // 3rd party package, you can't change it

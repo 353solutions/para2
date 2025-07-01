@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 /*
 Go
 type Reader interface {
@@ -57,5 +62,16 @@ func main() {
 		fmt.Println(csvFile)
 		return
 	*/
+
+	ch := make(chan int)
+	go func() {
+		v := <-ch
+		fmt.Println("v:", v)
+		time.Sleep(time.Second)
+		fmt.Println("done")
+	}()
+	ch <- 1
+	fmt.Println("send")
+	time.Sleep(2 * time.Second)
 
 }
