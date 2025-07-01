@@ -10,6 +10,7 @@ func main() {
 
 	start := time.Now()
 	out := PMap(inc, values, 3)
+	fmt.Println(out) // {2, 3, 4, 5, 6, 7, 8, 9, 10}
 	duration := time.Since(start)
 
 	fmt.Println(out, duration)
