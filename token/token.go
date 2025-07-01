@@ -10,12 +10,17 @@ func main() {
 	for i := range 4 {
 		go func() {
 			for range time.Tick(300 * time.Millisecond) {
-				fmt.Printf("%d: %s\n", i, t.Value())
+				fmt.Printf("%d: %q\n", i, t.Value())
 			}
 		}()
 	}
 
 	time.Sleep(4 * time.Second)
+}
+
+func NewToken() *Token {
+	var t Token
+	return &t
 }
 
 /* Exercise:
