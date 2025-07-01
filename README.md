@@ -108,9 +108,16 @@ Miki Tebeka
 ### Code
 
 
+- [counter.go](counter/counter.go) - The race detector, mutex, `sync/atomic`
+- [token.go](token_ch/token.go) - Refresh token, using channels
+- [token.go](token/token.go) - Refresh token, using `RWMutex`
+- [pmap.go](pmap/pmap.go) - Parallel map
+- [payment.go](payment/payment.go) - `sync.Once`
+- [pool.go](pool/pool.go) - Resource pool & `sync.Pool`
+
 - [taxi_check.go](taxi_check/taxi_check.go) - Convert sequential to concurrent, pool
 - [go_chan.go](go_chan/go_chan.go) - Channel semantics, goroutines
-- [pool.go](pool/pool.go) - Goroutine pool, return channel
+- [worker_pool.go](worker_pool/worker_pool.go) - Goroutine pool, return channel
 - [fan_in.go](fan_in/fan_in.go) - Fan in pattern
 - [panic.go](panic/panic.go) - Guarding against panics
 
@@ -132,6 +139,11 @@ Miki Tebeka
 - [Concurrency is not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso) by Rob Pike
 - [Scheduling in Go](https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part2.html) by Bill Kennedy
 - [conc: better structured concurrency for go](https://github.com/sourcegraph/conc)
+- [GopherCon Israel 2025 Videos](https://www.youtube.com/playlist?list=PLRM-8sTy13XvT_S1KJWZz2KOJgOt_vVVH)
+- [lru-cache](https://pkg.go.dev/github.com/hashicorp/golang-lru/v2)
+- [singleflight](https://pkg.go.dev/golang.org/x/sync/singleflight)
+- [huh](https://github.com/charmbracelet/huh) - UI in terminal
+    - Uses [bubbletea](https://github.com/charmbracelet/bubbletea)
 
 
 ### Data & More

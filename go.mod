@@ -12,7 +12,10 @@ tool golang.org/x/perf/cmd/benchstat
 // ~/go/bin/go1.24.3
 // alias go=~/go/bin/go1.24.3
 
-require go.etcd.io/bbolt v1.4.0
+require (
+	go.etcd.io/bbolt v1.4.2
+	golang.org/x/sync v0.15.0
+)
 
 require (
 	github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 // indirect

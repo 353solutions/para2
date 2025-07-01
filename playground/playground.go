@@ -63,15 +63,45 @@ func main() {
 		return
 	*/
 
-	ch := make(chan int)
+	/*
+		ch := make(chan int)
+		go func() {
+			v := <-ch
+			fmt.Println("v:", v)
+			time.Sleep(time.Second)
+			fmt.Println("done")
+		}()
+		ch <- 1
+		fmt.Println("send")
+		time.Sleep(2 * time.Second)
+	*/
+	/*
+		m := make(map[int]int)
+		go func() {
+			i := 0
+			for {
+				time.Sleep(time.Millisecond)
+				i++
+				m[i] = i
+			}
+		}()
+		go func() {
+			i := 0
+			for {
+				time.Sleep(time.Millisecond)
+				i++
+				m[i] = i
+			}
+		}()
+	*/
+	m := make(map[int]int)
 	go func() {
-		v := <-ch
-		fmt.Println("v:", v)
-		time.Sleep(time.Second)
-		fmt.Println("done")
+		m[1] = 2
 	}()
-	ch <- 1
-	fmt.Println("send")
-	time.Sleep(2 * time.Second)
-
+	go func() {
+		time.Sleep(10 * time.Millisecond)
+		m[2] = 3
+	}()
+	time.Sleep(time.Second)
+	fmt.Println("OK")
 }
