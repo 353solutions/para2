@@ -25,6 +25,77 @@ func main() {
 	p1.Move(207, 33)
 	// C++: p1->Move(207, 33);
 	fmt.Println("p1 (move):", p1)
+
+	ms := []Mover{
+		i,
+		&p1, // must match receiver semantics
+	}
+	moveAll(ms, 37, 123)
+	for _, m := range ms {
+		fmt.Println("m:", m)
+	}
+
+	fmt.Println("jade:", Jade)
+	fmt.Printf("jade: %d\n", Jade)
+	fmt.Println("Key(18):", Key(18))
+}
+
+/* What fmt.Print* does
+func Print(v any) {
+	if s, ok := v.(fmt.Stringer) {
+		print(s.String())
+		return
+	}
+
+	switch v.(type) {
+	case int:
+		// ...
+	}
+}
+*/
+
+// String implements fmt.Stringer
+func (k Key) String() string {
+	switch k {
+	case Copper:
+		return "copper"
+	case Jade:
+		return "jade"
+	case Crystal:
+		return "crystal"
+	}
+
+	return fmt.Sprintf("Key(%d)", k)
+}
+
+// Go's "enum"
+type Key uint8
+
+const (
+	Copper Key = iota + 1 // 1 << iota // bitmask
+	Jade
+	Crystal
+)
+
+/* Interface
+- Say what we need, not what we provide
+- Interfaces are small (stdlib average < 2 methods), my rule is up to 4
+- Accept interfaces, return types
+
+Uses:
+- Polymorphism
+	- Mocking
+- How stdlib looks at your types
+*/
+
+func moveAll(ms []Mover, x, y int) {
+	for _, m := range ms {
+		m.Move(x, y)
+	}
+}
+
+type Mover interface {
+	Move(int, int)
 }
 
 // value -> pointer ✓
