@@ -36,11 +36,10 @@ Miki Tebeka
 ### Code
 
 
-
-- [value.go](value/value.go) - Custom serialization
-- [vm.go](vm/vm.go) - Missing vs empty
-- [logs.go](logs/logs.go) - Steaming JSON
-- [client.go](events/client.go) - HTTP Clients
+- [value.go](session_1/value/value.go) - Custom serialization
+- [vm.go](session_1/vm/vm.go) - Missing vs empty
+- [logs.go](session_1/logs/logs.go) - Steaming JSON
+- [client.go](session_1/events/client.go) - HTTP Clients
 
 ### Links
 
@@ -74,9 +73,9 @@ Miki Tebeka
 
 ### Code
 
-- [tokenizer](tokenizer/) - Benchmark, profile, CPU & memory
-- [store](store) - cache & serialization
-- [matrix](matrix/) - CPU cache friendly
+- [tokenizer](session_2/tokenizer/) - Benchmark, profile, CPU & memory
+- [store](session_2/store) - cache & serialization
+- [matrix](session_2/matrix/) - CPU cache friendly
 - [playground](playground/) - This & that ☺
 
 ### Links
@@ -108,18 +107,18 @@ Miki Tebeka
 ### Code
 
 
-- [counter.go](counter/counter.go) - The race detector, mutex, `sync/atomic`
-- [token.go](token/token.go) - Refresh token, using `RWMutex`
-- [token.go](token_ch/token.go) - Refresh token, using channels
-- [pmap.go](pmap/pmap.go) - Parallel map
-- [payment.go](payment/payment.go) - `sync.Once`
-- [pool.go](pool/pool.go) - Resource pool & `sync.Pool`
+- [counter.go](session_3/counter/counter.go) - The race detector, mutex, `sync/atomic`
+- [token.go](session_3/token/token.go) - Refresh token, using `RWMutex`
+- [token.go](session_3/token_ch/token.go) - Refresh token, using channels
+- [pmap.go](session_3/pmap/pmap.go) - Parallel map
+- [payment.go](session_3/payment/payment.go) - `sync.Once`
+- [pool.go](session_3/pool/pool.go) - Resource pool & `sync.Pool`
 
-- [taxi_check.go](taxi_check/taxi_check.go) - Convert sequential to concurrent, pool
-- [go_chan.go](go_chan/go_chan.go) - Channel semantics, goroutines
-- [worker_pool.go](worker_pool/worker_pool.go) - Goroutine pool, return channel
-- [fan_in.go](fan_in/fan_in.go) - Fan in pattern
-- [panic.go](panic/panic.go) - Guarding against panics
+- [taxi_check.go](session_3/taxi_check/taxi_check.go) - Convert sequential to concurrent, pool
+- [go_chan.go](session_3/go_chan/go_chan.go) - Channel semantics, goroutines
+- [worker_pool.go](session_3/worker_pool/worker_pool.go) - Goroutine pool, return channel
+- [fan_in.go](session_3/fan_in/fan_in.go) - Fan in pattern
+- [panic.go](session_3/panic/panic.go) - Guarding against panics
 
 ### Links
 
@@ -166,7 +165,12 @@ Miki Tebeka
 
 ### Code
 
-TBD
+
+- [driver.go](session_4/driver/driver.go) - Why you can't do inheritance
+- [game.go](session_4/game/game.go) - Structs, methods & interfaces
+- [error.go](session_4/error/error.go) - When an interface is nil
+- [sha1.go](session_4/sha1/sha1.go) - Combining io.Reader & io.Writer
+- [wc.go](session_4/wc/wc.go) - Implement io.Writer
 
 
 ### Links
@@ -176,3 +180,7 @@ TBD
 - [Generics tutorial](https://go.dev/doc/tutorial/generics)
 - [Methods, interfaces & embedded types in Go](https://www.ardanlabs.com/blog/2014/05/methods-interfaces-and-embedded-types.html)
 - [Methods & Interfaces](https://go.dev/tour/methods/1) in the Go tour
+- [wrapMiddle](https://github.com/ardanlabs/service/blob/master/foundation/web/middleware.go) in Ardan Labs [service](https://github.com/ardanlabs/service)
+- [chi](https://github.com/go-chi/chi) - Example of chaining middleware
+- [List of file signatures](https://en.wikipedia.org/wiki/List_of_file_signatures)
+- [Method Sets](https://www.youtube.com/watch?v=Z5cvLOrWlLM)

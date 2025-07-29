@@ -92,5 +92,4 @@ type Sortable interface {
 func Sort(s Sortable) {
 	// sort s
 }
-
 */
