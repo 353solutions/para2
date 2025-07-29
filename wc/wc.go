@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-// go run wc.go < road.txt
+// $ go run wc.go < road.txt
 // 8 51 253
 func main() {
 	var wc WordCount
