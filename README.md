@@ -109,8 +109,8 @@ Miki Tebeka
 
 
 - [counter.go](counter/counter.go) - The race detector, mutex, `sync/atomic`
-- [token.go](token_ch/token.go) - Refresh token, using channels
 - [token.go](token/token.go) - Refresh token, using `RWMutex`
+- [token.go](token_ch/token.go) - Refresh token, using channels
 - [pmap.go](pmap/pmap.go) - Parallel map
 - [payment.go](payment/payment.go) - `sync.Once`
 - [pool.go](pool/pool.go) - Resource pool & `sync.Pool`
@@ -150,3 +150,29 @@ Miki Tebeka
 
 - [rtb.go](_extra/rtb.go)
 - [taxi.tar](https://storage.googleapis.com/353solutions/c/data/taxi.tar)
+
+---
+
+## Day 4: OO Patterns
+
+### Agenda
+
+- Pointer vs value semantics
+- Embedding structs
+- Interfaces in depth
+- The empty interface and type assertions
+- Iterators
+
+
+### Code
+
+TBD
+
+
+### Links
+
+- [sort examples](https://pkg.go.dev/sort/#pkg-examples) - Read and try to understand
+- [When to use generics](https://go.dev/blog/when-generics)
+- [Generics tutorial](https://go.dev/doc/tutorial/generics)
+- [Methods, interfaces & embedded types in Go](https://www.ardanlabs.com/blog/2014/05/methods-interfaces-and-embedded-types.html)
+- [Methods & Interfaces](https://go.dev/tour/methods/1) in the Go tour
