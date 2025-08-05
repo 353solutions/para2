@@ -173,8 +173,19 @@ Miki Tebeka
 - [wc.go](session_4/wc/wc.go) - Implement io.Writer
 
 
+- [logger.go](session_4/logger/logger.go) - Keeping interface small with reflection
+- [site.go](session_4/site/site.go) - Sub routers
+- [client_test.go](session_4/client/client_test.go) - Mocking http.RoundTripper
+- [empty.go](session_4/client/empty/empty.go) - The empty interface (`any`)
+- [stats.go](session_4/stats/stats.go) - Generics
+- [iter.go](session_4/iter/iter.go) - Iterators
+
+
 ### Links
 
+- [Feynman Algorithm](https://wiki.c2.com/?FeynmanAlgorithm)
+- [Generics can make your Go code slower](https://planetscale.com/blog/generics-can-make-your-go-code-slower)
+- [Coroutines for Go](https://research.swtch.com/coro) by Russ Cox
 - [sort examples](https://pkg.go.dev/sort/#pkg-examples) - Read and try to understand
 - [When to use generics](https://go.dev/blog/when-generics)
 - [Generics tutorial](https://go.dev/doc/tutorial/generics)
