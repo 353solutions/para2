@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cmp"
 	"fmt"
 	"time"
 )
@@ -25,16 +26,34 @@ func main() {
 		"Beth":   11_322,
 	}
 	v, err := MaxMap(scores)
-	fmt.Printf("max: %v (err=%v)\n", v, err)
+	fmt.Printf("max: %v (err=%v)\n", v, err) // Beth (err=nil)
 }
 
 /*
-	Exercise: Write MaxMap that gets a map where values are number and return the
+Exercise: Write MaxMap (generic function) that gets a map where values are
+number and return the key the has the maximal corresponding value.
 
-key the has the maximal corresponding value.
+You can use cmp.Ordered for the values
 */
-func MaxMap(m map[string]int) (string, error) {
-	return "", nil
+func MaxMap[K comparable, V cmp.Ordered](m map[K]V) (K, error) {
+	if len(m) == 0 {
+		return zero[K](), fmt.Errorf("max on empty map")
+	}
+
+	var (
+		first = true
+		maxK  K
+		maxV  V
+	)
+
+	for k, v := range m {
+		if first || v > maxV {
+			maxK, maxV = k, v
+		}
+		first = false
+	}
+
+	return maxK, nil
 }
 
 /*
