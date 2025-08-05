@@ -178,6 +178,7 @@ Miki Tebeka
 - [sort examples](https://pkg.go.dev/sort/#pkg-examples) - Read and try to understand
 - [When to use generics](https://go.dev/blog/when-generics)
 - [Generics tutorial](https://go.dev/doc/tutorial/generics)
+- [Generic Interfaces](https://go.dev/blog/generic-interfaces)
 - [Methods, interfaces & embedded types in Go](https://www.ardanlabs.com/blog/2014/05/methods-interfaces-and-embedded-types.html)
 - [Methods & Interfaces](https://go.dev/tour/methods/1) in the Go tour
 - [wrapMiddle](https://github.com/ardanlabs/service/blob/master/foundation/web/middleware.go) in Ardan Labs [service](https://github.com/ardanlabs/service)
