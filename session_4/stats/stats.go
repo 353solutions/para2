@@ -25,7 +25,7 @@ func main() {
 		"Beth":   11_322,
 	}
 	v, err := MaxMap(scores)
-	fmt.Println("max: %v (err=%v)\n", v, err)
+	fmt.Printf("max: %v (err=%v)\n", v, err)
 }
 
 /*
