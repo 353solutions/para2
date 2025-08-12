@@ -69,6 +69,11 @@ func main() {
 		count++
 	}
 	duration := time.Since(start)
+	duration := time.Since(start)
+	var mem runtime.MemStats
+	runtime.ReadMemStats(&mem)
+	alloc_mb := float64(mem.Alloc) / (1 << 20)
+	fmt.Printf("%d logs in %v with %.2fMB\n", count, duration, alloc_mb)
 	var mem runtime.MemStats
 	runtime.ReadMemStats(&mem)
 	alloc_mb := float64(mem.Alloc) / (1 << 20)

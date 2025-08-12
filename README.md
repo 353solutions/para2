@@ -214,14 +214,15 @@ Miki Tebeka
 
 ### Code
 
-TBD
-
+- [collatz](session_5/collatz) - Debugging goroutines
+- [gosay](session_5/gosay/) - Building executables
 
 ### Links
 
 - [Using ldflags to Set Version Information for Go Applications](https://www.digitalocean.com/community/tutorials/using-ldflags-to-set-version-information-for-go-applications)
 - [GoReleaser](https://goreleaser.com/)
     - [GitHub Action](https://github.com/goreleaser/goreleaser-action)
+- [svu](https://github.com/caarlos0/svu) - Bump version
 - [Using Zig to Compile Cgo](https://github.com/goreleaser/example-zig-cgo)
 - Command line & Options
     - [flag](https://pkg.go.dev/flag)
@@ -232,6 +233,20 @@ TBD
     - [x/crypto/autocert](https://pkg.go.dev/golang.org/x/crypto/acme/autocert)
     - [Using Let's Encrypt in Go](https://marcofranssen.nl/build-a-go-webserver-on-http-2-using-letsencrypt)
     - [Customizing Binaries with Build Tags](https://www.digitalocean.com/community/tutorials/customizing-go-binaries-with-build-tags)
+- [tar joke](https://xkcd.com/1168/)
+- [Reversim Summit](https://summit2025.reversim.com/) - October 27,28
+- [Writing Deployable Code](https://medium.com/@rantav/writing-deployable-code-part-one-13ec6dc90adb)
+- [The Twelve Factor App](https://12factor.net)
+- [TOML format](https://toml.io/en/)
+- [Knight Capital Group](https://en.wikipedia.org/wiki/Knight_Capital_Group) - Cost of configuration error
+- [The Art of Unix Programming](https://cdn.nakamotoinstitute.org/docs/taoup.pdf) PDF
+- [Generating Code](https://go.dev/blog/generate) - `go:generate`
+- [embed](https://pkg.go.dev/embed) package
+- [Debug a Go Application Running on Kubernetes](https://www.youtube.com/watch?v=YXu2box7z9k)
+- [Core Dump Debugging](https://go.dev/wiki/CoreDumpDebugging)
+- [Leek & Seek](https://www.youtube.com/watch?v=94wG_LJH86U) - A lot of diagnostic advices and tools
+- [Go: Monitor your goroutine](https://medium.com/@hax.artisan/go-monitor-your-goroutine-application-9edbdd6e581b)
+- [Diagnostics](https://go.dev/doc/diagnostics) in the Go docs
 
 
 ### Data & Other
