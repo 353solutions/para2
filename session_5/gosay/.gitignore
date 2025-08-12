@@ -1,0 +1,4 @@
+gosay
+gosay.exe
+# Added by goreleaser init:
+dist/
