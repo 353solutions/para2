@@ -26,6 +26,7 @@ var images embed.FS
 
 // Exercise: Support -image NAME that will use image from the "images"
 // directory instead of the gopher
+// Same as "cowsay -f alpaca"
 
 func main() {
 	flag.BoolVar(&options.showVersion, "version", false, "show version & exit")
