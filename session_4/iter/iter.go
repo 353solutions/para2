@@ -95,11 +95,37 @@ func Filter[T any](in iter.Seq[T], pred func(T) bool) iter.Seq[T] {
 				return
 			}
 		}
-
 	}
 
 	return fn
 }
+
+func Head[T any](s iter.Seq[T], n int) iter.Seq[T] {
+	// TODO: n > 0
+	fn := func(yield func(T) bool) {
+		for v := range s {
+			if !yield(v) {
+				return
+			}
+			n--
+			if n == 0 {
+				return
+			}
+		}
+	}
+
+	return fn
+}
+
+// Valid logs out of first 10 logs (BUG?)
+// logs := loadLogs()
+// logs = Head(logs, 10)
+// logs = Filter(logs, IsValid)
+
+// First 10 valid logs
+// logs := loadLogs()
+// logs = Filter(logs, IsValid)
+// logs = Head(logs, 10)
 
 /* Stream operations
 - Map: [1, 2, 3], func(n int) int {return n * 2} -> [2 4 6]
