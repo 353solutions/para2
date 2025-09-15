@@ -14,7 +14,7 @@ Miki Tebeka
 
 ---
 
-## Day 1: RPC
+## Session 1: RPC
 
 ### Agenda
 
@@ -62,7 +62,7 @@ Miki Tebeka
 
 ---
 
-## Day 2: Going Faster
+## Session 2: Going Faster
 
 ### Agenda
 
@@ -152,7 +152,7 @@ Miki Tebeka
 
 ---
 
-## Day 4: OO Patterns
+## Session 4: OO Patterns
 
 ### Agenda
 
@@ -201,7 +201,7 @@ Miki Tebeka
 
 ---
 
-## Session 5: Project Engineers
+## Session 5: Project Engineering
 
 ### Agenda
 
@@ -248,8 +248,12 @@ Miki Tebeka
 - [Go: Monitor your goroutine](https://medium.com/@hax.artisan/go-monitor-your-goroutine-application-9edbdd6e581b)
 - [Diagnostics](https://go.dev/doc/diagnostics) in the Go docs
 
+- [Structured Logging with slog](https://go.dev/blog/slog)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+
 
 ### Data & Other
 
 - [gopher.txt](_extra/gopher.txt)
 - [Secure Code Slides](_extra/secure-go.pdf)
+- [journal.tar.gz](_extra/journal.tar.gz)
