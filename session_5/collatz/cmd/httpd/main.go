@@ -7,8 +7,9 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 	"os"
-	"solutions/collatz"
 	"strconv"
+
+	"para2/session_5/collatz"
 )
 
 func main() {

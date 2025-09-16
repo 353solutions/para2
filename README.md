@@ -257,3 +257,6 @@ Miki Tebeka
 - [gopher.txt](_extra/gopher.txt)
 - [Secure Code Slides](_extra/secure-go.pdf)
 - [journal.tar.gz](_extra/journal.tar.gz)
+
+
+![](https://pixel-73339669570.me-west1.run.app/p/para2/p.png)
