@@ -217,6 +217,12 @@ Miki Tebeka
 - [collatz](session_5/collatz) - Debugging goroutines
 - [gosay](session_5/gosay/) - Building executables
 
+
+- [spinner.go](session_5/spinner/spinner.go) - Terminal spinner
+- [grep.go](session_5/grep/grep.go) - Terminal and command line
+- [logging.go](session_5/logging/logging.go) - Logging
+- [log_design.go](session_5/logging/logger_design.go) - Logger design
+
 ### Links
 
 - [Using ldflags to Set Version Information for Go Applications](https://www.digitalocean.com/community/tutorials/using-ldflags-to-set-version-information-for-go-applications)
@@ -250,6 +256,28 @@ Miki Tebeka
 
 - [Structured Logging with slog](https://go.dev/blog/slog)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- Security Linters
+    - [gosec](https://github.com/securego/gosec)
+    - [govulncheck](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck)
+    - [gitleaks](https://github.com/gitleaks/gitleaks)
+- Certificates
+    - [mkcert](https://github.com/FiloSottile/mkcert) for local development
+    - [letsencrypt](https://letsencrypt.org/) - Free certificates
+- [OPA](https://pkg.go.dev/github.com/open-policy-agent/opa) - Authorization
+- Validation
+    - [validator](https://pkg.go.dev/github.com/go-playground/validator/v10#pkg-overview)
+- Code Structure
+    - [Organizing a Go Module](https://go.dev/doc/modules/layout)
+    - [ArdanLabs service](https://github.com/ardanlabs/service/tree/master)
+- [zap log to screen & file](https://stackoverflow.com/a/54999899/7650)
+- [Estimation](https://xkcd.com/612/)
+- [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) - Colors in your terminal
+- [libffi](https://github.com/libffi/libffi) - Scary C code
+    - Does [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface)
+- [cgo](https://go.dev/blog/cgo)
+- Terminals supporting graphics
+    - [ghostty](https://ghostty.org/)
+    - [kitty](https://sw.kovidgoyal.net/kitty/)
 
 
 ### Data & Other
