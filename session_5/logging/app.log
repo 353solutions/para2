@@ -1,0 +1,23 @@
+2025-09-17T12:28:26.198+0300	INFO	logging/logging.go:29	system up	{"host": "", "port": 9999}
+2025-09-17T12:28:26.198+0300	INFO	logging/logging.go:32	connect to database	{"host": "", "db_host": "localhost", "db_port": 7654}
+{"level":"info","ts":1758101346.552969,"caller":"logging/logging.go:29","msg":"system up","host":"","port":9999}
+{"level":"info","ts":1758101346.5530016,"caller":"logging/logging.go:32","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:31:06+03:00","caller":"logging/logging.go:30","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:31:06+03:00","caller":"logging/logging.go:33","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:35:12+03:00","caller":"logging/logging.go:31","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:35:12+03:00","caller":"logging/logging.go:34","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:36:57+03:00","caller":"logging/logging.go:31","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:36:57+03:00","caller":"logging/logging.go:34","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:39:06+03:00","caller":"logging/logging.go:31","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:39:06+03:00","caller":"logging/logging.go:34","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:39:06+03:00","caller":"logging/logging.go:48","msg":"hi from slog","host":""}
+{"level":"info","ts":"2025-09-17T12:41:45+03:00","caller":"logging/logging.go:31","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:41:45+03:00","caller":"logging/logging.go:34","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:41:45+03:00","caller":"logging/logging.go:48","msg":"user role","host":"","role":2}
+{"level":"info","ts":"2025-09-17T12:42:59+03:00","caller":"logging/logging.go:31","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:42:59+03:00","caller":"logging/logging.go:34","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:42:59+03:00","caller":"logging/logging.go:48","msg":"user role","host":"","role":"Writer"}
+{"level":"info","ts":"2025-09-17T12:56:01+03:00","caller":"logging/logging.go:32","msg":"system up","host":"","port":9999}
+{"level":"info","ts":"2025-09-17T12:56:01+03:00","caller":"logging/logging.go:35","msg":"connect to database","host":"","db_host":"localhost","db_port":7654}
+{"level":"info","ts":"2025-09-17T12:56:01+03:00","caller":"logging/logging.go:49","msg":"user role","host":"","role":"Writer"}
+much writing
