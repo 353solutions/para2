@@ -104,7 +104,7 @@ You might get SIGPIPE signal
 3 main signals:
 SIGPIPE: stdout/stderr closed
 SIGINT: CTRL-C
-SIGTERM: Terminal closed
+SIGHUP: Terminal closed
 	- see nohup
 
 You can't catch all signals (e.g. KILL=9)

@@ -14,11 +14,13 @@ tool golang.org/x/perf/cmd/benchstat
 
 require (
 	go.etcd.io/bbolt v1.4.2
+	go.uber.org/zap v1.27.0
 	golang.org/x/sync v0.15.0
 )
 
 require (
 	github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/perf v0.0.0-20250515181355-8f5f3abfb71a // indirect
 	golang.org/x/sys v0.33.0 // indirect
 )
