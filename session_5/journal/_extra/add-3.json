@@ -1,0 +1,4 @@
+{
+  "login": "joe",
+  "content": "My third entry! <script>alert(\"Pwned!\")</script>"
+}
