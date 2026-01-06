@@ -6,8 +6,8 @@ import (
 )
 
 type Ride struct {
-	ID       string    `json:"id"`
-	Time     time.Time `json:"time"`
+	ID       string
+	Time     time.Time
 	Distance float64
 	Shared   bool
 }
