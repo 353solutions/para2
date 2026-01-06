@@ -308,6 +308,9 @@ TBD
     - [x/tools/analysis](https://pkg.go.dev/golang.org/x/tools/go/analysis) - Write your own
 - [Getting Started with Fuzzing](https://go.dev/doc/tutorial/fuzz)
 - [Testcontainers for Go](https://golang.testcontainers.org/)
+- [distroless](https://github.com/GoogleContainerTools/distroless) - Hardened Docker images
+- [go-faker](https://github.com/go-faker/faker/blob/main/example_with_tags_test.go) - Generate fake data (email ...)
+- [RESP Client for VSCode](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
 
 ### Data & Other
