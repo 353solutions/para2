@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	log := slog.Default().With("app", "cars")
-	dbFile := os.Getenv("CARS_DB")
+	log := slog.Default().With("app", "unter")
+	dbFile := os.Getenv("UNTER_DB")
 	if dbFile == "" {
-		dbFile = "cars.db"
+		dbFile = "unter.db"
 	}
-	addr := os.Getenv("CARS_ADDR")
+	addr := os.Getenv("UNTER_ADDR")
 	if addr == "" {
 		addr = ":8080"
 	}
