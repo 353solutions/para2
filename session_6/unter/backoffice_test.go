@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"testing"
 
@@ -30,7 +31,7 @@ type priceTestCase struct {
 // TODO: return iter.Seq[priceTestCase]
 func loadPriceTestCases(t *testing.T) []priceTestCase {
 	// t.Helper()
-	file, err := os.Open("testdata/price_cases.yaml")
+	file, err := os.Open("testdata/price_cases.yml")
 	require.NoError(t, err, "file")
 	defer file.Close()
 
@@ -52,3 +53,16 @@ func TestRidePrice_Table(t *testing.T) {
 		})
 	}
 }
+
+func FuzzRidePrice(f *testing.F) {
+	f.Add(0.0, false)
+	f.Fuzz(func(t *testing.T, distance float64, shared bool) {
+		distance = math.Abs(distance)
+		price := RidePrice(distance, shared)
+		if price <= 0 {
+			t.Fatalf("%v:%v -> %d - bad price", distance, shared, price)
+		}
+	})
+}
+
+// $ go test -v -fuzz . -fuzztime 10s
