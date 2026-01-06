@@ -8,6 +8,7 @@ import (
 	"os/exec"
 	"path"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/require"
 )
@@ -47,8 +48,13 @@ func runServer(t *testing.T) int {
 	port := freePort(t)
 
 	cmd := exec.Command(exe)
-	cmd.Env = append(os.Environ(), fmt.Sprintf("UNTER_ADDR=:%d", port))
-	cmd.Env = append(os.Environ(), fmt.Sprintf("UNTER_DB=%s", path.Join(t.TempDir(), "unter.db")))
+	env := append(
+		os.Environ(),
+		fmt.Sprintf("UNTER_ADDR=:%d", port),
+		fmt.Sprintf("UNTER_DB=%s", path.Join(t.TempDir(), "unter.db")),
+	)
+	cmd.Env = env
+	cmd.Stderr = t.Output()
 
 	err := cmd.Start()
 	require.NoError(t, err, "start")
@@ -59,13 +65,31 @@ func runServer(t *testing.T) int {
 	})
 
 	return port
+
+}
+func waitForServer(t *testing.T, addr string, timeout time.Duration) {
+	start := time.Now()
+	var err error
+	for time.Since(start) < timeout {
+		var conn net.Conn
+		conn, err = net.Dial("tcp", addr)
+		if err == nil {
+			conn.Close()
+			return
+		}
+		time.Sleep(10 * time.Millisecond)
+	}
+
+	t.Fatalf("server at %s not ready after %s - %s ", addr, timeout, err)
 }
 
 func TestHealth_Local(t *testing.T) {
 	port := runServer(t)
 	url := fmt.Sprintf("http://localhost:%d/health", port)
+	t.Logf("url: %q", url)
 	req, err := http.NewRequestWithContext(t.Context(), http.MethodGet, url, nil)
 	require.NoError(t, err, "request")
+	waitForServer(t, fmt.Sprintf("localhost:%d", port), 10*time.Second)
 
 	resp, err := http.DefaultClient.Do(req)
 	require.NoError(t, err, "get")
