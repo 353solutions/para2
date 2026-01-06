@@ -1,0 +1,13 @@
+-
+  distance: 5.0
+  shared: false
+  expected: 1000
+-
+  distance: 5.0
+  shared: true
+  expected: 900
+- 
+  distance: 0.0
+  shared: true
+  expected: 225
+  name: Zero

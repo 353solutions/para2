@@ -1,0 +1,12 @@
+###
+GET http://localhost:8080/health
+
+
+###
+POST http://localhost:8080/rides
+
+< testdata/ride.json
+
+
+###
+GET http://localhost:8080/ride/c92
